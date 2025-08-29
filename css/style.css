@@ -36,7 +36,7 @@ a {
 }
 
 .container {
-  max-width: 980px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 24px
 }
@@ -60,6 +60,11 @@ h1 {
   gap: 22px
 }
 
+.grid.single {
+  grid-template-columns:1fr;
+  justify-items: center;
+}
+
 @media (max-width: 840px) {
   .grid {
     grid-template-columns:1fr
@@ -70,11 +75,25 @@ h1 {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow)
+  box-shadow: var(--shadow);
+
+}
+
+.card-info {
+  width: 100%;
+  max-width: 950px;
+  margin: 1px auto;
+  padding-inline: 10px;
+  padding-block: 10px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .card-inner {
-  padding: 18px
+  padding: 18px;
 }
 
 .field {
@@ -82,7 +101,7 @@ h1 {
   grid-template-columns:160px 1fr;
   gap: 12px;
   align-items: center;
-  margin-bottom: 12px
+  margin-bottom: 12px;
 }
 
 @media (max-width: 560px) {
@@ -93,7 +112,7 @@ h1 {
 
 label {
   color: var(--muted);
-  font-weight: 600
+  font-weight: 600;
 }
 
 input[type="number"] {
