@@ -1,0 +1,250 @@
+:root {
+  --bg: #0f1115;
+  --card: #131826;
+  --card-2: #171d2e;
+  --text: #e9eef7;
+  --muted: #aab3c5;
+  --accent: #6ee7b7;
+  --accent-2: #22d3ee;
+  --danger: #f87171;
+  --warn: #fbbf24;
+  --ok: #34d399;
+  --border: rgba(255, 255, 255, .08);
+  --shadow: 0 12px 32px rgba(0, 0, 0, .35);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html, body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 500px at 20% -10%, rgba(34, 211, 238, .08), transparent), var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  line-height: 1.6
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px
+}
+
+h1 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin: 0
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:1.1fr .9fr;
+  gap: 22px
+}
+
+@media (max-width: 840px) {
+  .grid {
+    grid-template-columns:1fr
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow)
+}
+
+.card-inner {
+  padding: 18px
+}
+
+.field {
+  display: grid;
+  grid-template-columns:160px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px
+}
+
+@media (max-width: 560px) {
+  .field {
+    grid-template-columns:1fr
+  }
+}
+
+label {
+  color: var(--muted);
+  font-weight: 600
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--card-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none
+}
+
+input[type="number"]:focus {
+  border-color: var(--accent)
+}
+
+.gender {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, .06)
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border: none;
+  color: #0b1118
+}
+
+.btn.block {
+  width: 100%
+}
+
+.btn-toggle {
+  border: 1px solid var(--border);
+  background: var(--card-2)
+}
+
+.btn-toggle.active {
+  outline: 2px solid var(--accent);
+  background: linear-gradient(180deg, rgba(110, 231, 183, .18), transparent)
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px
+}
+
+.result {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius)
+}
+
+.result .card-inner {
+  padding: 18px 18px 8px
+}
+
+.kpi {
+  display: flex;
+  align-items: baseline;
+  gap: 10px
+}
+
+.kpi .value {
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3rem)
+}
+
+.kpi .unit {
+  color: var(--muted)
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  margin: 8px 0
+}
+
+.badge.ok {
+  background: rgba(52, 211, 153, .18);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, .35)
+}
+
+.badge.warn {
+  background: rgba(251, 191, 36, .14);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, .35)
+}
+
+.badge.danger {
+  background: rgba(248, 113, 113, .14);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, .35)
+}
+
+.badge.info {
+  background: rgba(34, 211, 238, .14);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, .35)
+}
+
+.meter {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  overflow: hidden;
+  margin: 10px 0 6px
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #22d3ee, #6ee7b7);
+  width: 0%
+}
+
+.adv {
+  color: var(--muted);
+  margin-top: 8px
+}
+
+.note {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: 8px
+}
+
+.error {
+  color: #fca5a5;
+  font-weight: 600;
+  margin-top: 6px
+}

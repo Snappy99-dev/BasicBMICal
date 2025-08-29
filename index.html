@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js" lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>คำนวณค่า BMI – แบบง่าย สวย ใช้งานไว</title>
+  <meta content="คำนวณค่า BMI แบบง่าย ๆ พร้อมเกณฑ์และคำแนะนำส่วนตัว รองรับหน่วยกิโลกรัม/เซนติเมตร และเลือกเพศ-อายุได้"
+        name="description">
+  <link href="/favicon.ico" rel="icon" sizes="any">
+  <link href="/icon.svg" rel="icon" type="image/svg+xml">
+  <link href="icon.png" rel="apple-touch-icon">
+  <link href="site.webmanifest" rel="manifest">
+  <meta content="#101218" name="theme-color">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="brand"><span aria-hidden="true" class="mark"></span>
+      <div>
+        <h1>เครื่องคำนวณค่า BMI</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- Form Card -->
+    <section aria-labelledby="calc-title" class="card">
+      <div class="card-inner">
+        <h2 id="calc-title" style="margin:0 0 8px">ข้อมูลของคุณ</h2>
+
+        <div class="field">
+          <label for="weight">น้ำหนัก (กิโลกรัม)</label>
+          <input id="weight" inputmode="decimal" min="1" placeholder="เช่น 65" step="0.1" type="number">
+        </div>
+
+        <div class="field">
+          <label for="height">ส่วนสูง (เซนติเมตร)</label>
+          <input id="height" inputmode="decimal" min="30" placeholder="เช่น 170" step="0.1" type="number">
+        </div>
+
+        <div class="field">
+          <label>เพศ</label>
+          <div aria-label="เลือกเพศ" class="gender" role="tablist">
+            <button aria-pressed="true" class="btn btn-toggle active" data-gender="male" type="button">ชาย</button>
+            <button aria-pressed="false" class="btn btn-toggle" data-gender="female" type="button">หญิง</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="age">อายุ (ปี)</label>
+          <input id="age" inputmode="numeric" max="120" min="1" placeholder="เช่น 25" step="1" type="number">
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="calc">คำนวณ BMI</button>
+          <button class="btn" id="reset" type="button">ล้างค่า</button>
+        </div>
+        <div aria-live="polite" class="error" id="err" style="display:none"></div>
+        <p class="note">* ใช้เกณฑ์ **เอเชีย/ไทย**: ต่ำกว่า 18.5 = น้ำหนักน้อย • 18.5–22.9 = ปกติ • 23–24.9 = ท้วม/เสี่ยง
+          • 25–29.9 = อ้วนระดับ 1 • ≥30 = อ้วนระดับ 2</p>
+      </div>
+    </section>
+
+    <!-- Result Card -->
+    <aside aria-labelledby="result-title" class="result">
+      <div class="card-inner">
+        <h2 id="result-title" style="margin:0 0 8px">ผลลัพธ์</h2>
+        <div class="kpi"><span class="value" id="bmi">–</span><span class="unit">BMI</span></div>
+        <div class="badge info" id="cat">กรอกข้อมูลเพื่อดูผล</div>
+        <div aria-hidden="true" class="meter"><span id="bar"></span></div>
+        <p class="adv" id="advice">คำแนะนำจะปรากฏที่นี่หลังคำนวณ</p>
+      </div>
+    </aside>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
